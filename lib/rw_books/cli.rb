@@ -1,7 +1,7 @@
 class RwBooks::CLI #this is charge of user interation
 
   def call
-    puts "Here are the books Reese Witherspoon Book Club is reading this month:"
+    puts "See what the Reese Witherspoon Book Club is currently reading:"
     list_books
       #this method should list the four books the group is working on within the four week period
     select_book
@@ -21,9 +21,10 @@ class RwBooks::CLI #this is charge of user interation
   end
 
   def select_book
-    puts "Enter the number of the book to learn more about it."
     while input = nil || input != "exit"
+      puts "Enter the number of the book to learn more about it or type 'exit', or type 'list' to see the book titles again."
     input = gets.strip.downcase
+    #puts "Enter the number of the book to learn more about it."
     case input
       when "1"
         puts "More information on book 1"
@@ -33,6 +34,8 @@ class RwBooks::CLI #this is charge of user interation
         puts "More information on book 3"
       when "4"
         puts "More information on book 4"
+      when "list"
+        list_books
     end
   end
 end
