@@ -1,5 +1,2 @@
-require "rw_books/version"
-
-module RwBooks
-  # Your code goes here...
-end
+require_relative "rw_books/version"
+require_relative 'rw_books/cli'
