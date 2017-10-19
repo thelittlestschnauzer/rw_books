@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
-#require "bundler/setup"
-require "./lib/rw_books"
+require "bundler/setup"
+require "rw_books"
+
 
 RwBooks::CLI.new.call
