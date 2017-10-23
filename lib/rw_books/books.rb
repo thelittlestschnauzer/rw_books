@@ -1,21 +1,20 @@
 class RwBooks::Books
 
-  attr_accessor :name, :author, :url
+  attr_accessor :title, :author, :url
 
-  @@book_list = []
+  def self.this_month
+    doc = Nokogiri::HTML(open(https://www.goodreads.com/group/show/209532-rw-bookclub))
 
-  def initialize(attributes = {})
-    @name = attributes[:name]
-    @author = attributes[:author]
-    @url = attributes[:url]
-    @@book_list << self
+    books = {}
+
+    doc.css("div.Title a.bookTitle").each do |book|
+      books = {
+        :books => doc.css("a.bookName").text
+      }
+    end
+    books
   end
 
-  def self.all
-    @@book_list
-  end
+
 
 end
-
-
-  
