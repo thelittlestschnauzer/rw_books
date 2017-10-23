@@ -10,9 +10,9 @@ class RwBooks::CLI #this is charge of user interation
     def list_books
       puts "See what books the Reese Witherspoon Book Club is currently reading:"
       #this method will list the four books the group is reading - will be scraped
-      @books = RwBooks::Books.this_month
-      @books.each_with_index do |book, index|
-        puts "#{index+1}. #{book.name} by #{book.author}"
+      @books = RwBooks::Scraper.this_month
+      @books.each.with_index(1) do |book, index|
+        puts "#{index}. #{book.name} by #{book.author}"
       end
     end
 
