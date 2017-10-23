@@ -13,4 +13,12 @@ class RwBooks::CLI #this is charge of user interation
       # end
     end
 
+    def menu
+      input = nil
+      while input != "exit"
+        puts "Which book would you like to know more about? Type 1-4,  'list' or 'exit'."
+        input = gets.strip.downcase
+      end
+    end
+
 end

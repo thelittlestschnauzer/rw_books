@@ -7,7 +7,7 @@ class RwBooks::Books
   end
 
   def self.scrape_books
-
+    
   end
 
 
